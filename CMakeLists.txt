@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(microbioreactor_parallel)
 add_subdirectory (./external/Biser)
+set (PROJECT_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 
 set(CMAKE_CXX_COMPILER "/usr/bin/mpic++")
 
@@ -15,6 +16,13 @@ execute_process(
 	COMMAND  git submodule update --init --recursive
 	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
+
+add_custom_target(
+	git_update
+	COMMAND git submodule init
+	COMMAND git submodule update
+	WORKING_DIRECTORY ${PROJECT_DIR}
+	)
 
 set (PROJECT_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set (SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
