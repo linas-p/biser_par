@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for n_core in 1 2 3 4 5 6 7 8
+do
+    for n_size in 16 32 48 64 96 128 192 256
+    do
+        echo "Got" $n_core " and " $n_size
+        ../build/parallel_omp $n_size $n_core
+    done
+done
