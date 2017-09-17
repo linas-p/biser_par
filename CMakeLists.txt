@@ -11,6 +11,10 @@ find_package(OpenMP REQUIRED)
 
 set(CMAKE_CXX_FLAGS "-std=c++11 -O2 -Wall -pedantic -Wsign-compare ${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 
+execute_process(
+	COMMAND  git submodule update --init --recursive
+	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
 set (PROJECT_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set (SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")

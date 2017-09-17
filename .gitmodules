@@ -1,0 +1,3 @@
+[submodule "external/Biser"]
+	path = external/Biser
+	url = https://github.com/linas-p/Biser
