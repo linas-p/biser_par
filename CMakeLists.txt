@@ -17,12 +17,6 @@ execute_process(
 	WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_custom_target(
-	git_update
-	COMMAND git submodule init
-	COMMAND git submodule update
-	WORKING_DIRECTORY ${PROJECT_DIR}
-	)
 
 set (PROJECT_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
 set (SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/src")
